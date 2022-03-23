@@ -15,8 +15,3 @@ struct Person: Codable {
         "\(Name) \(Surname)"
     }
 }
-
-struct SomeoneElse: Codable {
-    let Name: String
-    let Surname: String
-}

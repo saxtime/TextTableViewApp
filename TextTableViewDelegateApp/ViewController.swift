@@ -28,10 +28,7 @@ class ViewController: UIViewController {
             secondVC.delegate = self
         }
     }
-
 }
-
-
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,3 +65,5 @@ extension ViewController: FullNameDelegate {
         tableView.reloadData()
     }
 }
+
+
