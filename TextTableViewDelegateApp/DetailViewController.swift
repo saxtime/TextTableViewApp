@@ -21,6 +21,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
       
     }
     
@@ -30,9 +32,11 @@ class DetailViewController: UIViewController {
         guard let surname = surnameTF.text else { return }
         
         let person = Person(Name: name, Surname: surname)
+        
         StorageManager.shared.saveContact(person: person)
         
         delegate.sendName(person: person)
+        
         
         dismiss(animated: true, completion: nil)
     }
