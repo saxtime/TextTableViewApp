@@ -14,7 +14,6 @@ protocol FullNameDelegate {
 class DetailViewController: UIViewController {
     
     var delegate: FullNameDelegate!
-    
     var someText = ""
     
     @IBOutlet var nameTF: UITextField!
@@ -37,6 +36,4 @@ class DetailViewController: UIViewController {
         
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }

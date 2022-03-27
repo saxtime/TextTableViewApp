@@ -15,6 +15,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        navigationItem.rightBarButtonItem?.tintColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -29,6 +34,8 @@ class ViewController: UIViewController {
         }
     }
 }
+
+//MARK: - TableView DataSourse & Delegate
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,6 +64,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
+
+//MARK: - Using delegate method
 
 extension ViewController: FullNameDelegate {
     func sendName(person: Person) {
