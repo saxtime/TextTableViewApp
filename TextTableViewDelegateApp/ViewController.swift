@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         
         nameArray = StorageManager.shared.fetchContacts()
-        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,7 +59,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
             StorageManager.shared.deleteContact(at: indexPath.row)
             tableView.endUpdates()
-            
         }
     }
 }

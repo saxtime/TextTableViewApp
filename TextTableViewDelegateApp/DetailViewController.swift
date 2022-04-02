@@ -48,7 +48,6 @@ class DetailViewController: UIViewController {
         
         delegate.sendName(person: person)
         
-        
         dismiss(animated: true, completion: nil)
     }
     
