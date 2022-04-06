@@ -56,9 +56,41 @@
             <point key="canvasLocation" x="1050.7246376811595" y="107.8125"/>
         </scene>
         <!--Detail View Controller-->
+        <scene sceneID="zia-p2-VyK">
+            <objects>
+                <viewController storyboardIdentifier="pickedUpNow" id="fbm-wb-TJy" customClass="DetailViewController" customModule="TextTableViewDelegateApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RRG-Ur-7Xe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCQ-AM-efb">
+                                <rect key="frame" x="173.5" y="430" width="67.5" height="36"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lgl-JL-IQU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DCQ-AM-efb" firstAttribute="centerX" secondItem="RRG-Ur-7Xe" secondAttribute="centerX" id="4ZW-y9-Abs"/>
+                            <constraint firstItem="DCQ-AM-efb" firstAttribute="centerY" secondItem="RRG-Ur-7Xe" secondAttribute="centerY" id="neO-Xh-Amf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Qv-fW-nRQ"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="DCQ-AM-efb" id="RUV-Dy-D0l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUa-zS-K5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4200" y="107.8125"/>
+        </scene>
+        <!--New Name View Controller-->
         <scene sceneID="Q37-ZC-A6m">
             <objects>
-                <viewController id="c9w-UK-M1Y" customClass="DetailViewController" customModule="TextTableViewDelegateApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c9w-UK-M1Y" customClass="NewNameViewController" customModule="TextTableViewDelegateApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sU4-8u-GTf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +117,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kv-7U-s6c">
                                 <rect key="frame" x="132" y="548.5" width="150" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8QQ-uc-Rhi"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="qnd-lq-YOG"/>
@@ -151,7 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBZ-Rf-6qN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1857.9710144927537" y="107.8125"/>
+            <point key="canvasLocation" x="1906" y="108"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Go8-pM-8GV">
@@ -161,6 +193,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9JD-UY-OEb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -176,6 +213,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8n4-Wb-sVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="107.8125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F8q-aq-Tof">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="knD-hV-PGw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yVb-YN-sTH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fbm-wb-TJy" kind="relationship" relationship="rootViewController" id="1Dt-uA-ESJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxE-95-XmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3289.8550724637685" y="107.8125"/>
         </scene>
     </scenes>
     <resources>

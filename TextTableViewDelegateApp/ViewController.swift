@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.tintColor = .white
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -27,8 +28,8 @@ class ViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetail" {
-            let secondVC = segue.destination as! DetailViewController
+        if segue.identifier == Constants.shared.newNameControllerID {
+            let secondVC = segue.destination as! NewNameViewController
             secondVC.delegate = self
         }
     }
@@ -42,7 +43,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.shared.cellID, for: indexPath)
         cell.textLabel?.text = nameArray[indexPath.row].Fullname
         print("cell for row", nameArray)
         return cell
@@ -61,6 +62,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             tableView.endUpdates()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
+        let detailViewController = storyboard?.instantiateViewController(identifier: Constants.shared.detailVCID) as? DetailViewController
+        self.navigationController?.pushViewController(detailViewController!, animated: true)
+        detailViewController?.name = nameArray[indexPath.row].Fullname
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 //MARK: - Using delegate method

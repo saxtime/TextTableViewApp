@@ -2,60 +2,27 @@
 //  DetailViewController.swift
 //  TextTableViewDelegateApp
 //
-//  Created by Андрей Василевский on 3/23/22.
+//  Created by Андрей Василевский on 4/6/22.
 //
 
 import UIKit
 
-protocol FullNameDelegate {
-    func sendName(person: Person)
-}
-
 class DetailViewController: UIViewController {
     
-    var delegate: FullNameDelegate!
-    var someText = ""
-    
-    @IBOutlet var nameTF: UITextField!
-    @IBOutlet var surnameTF: UITextField!
+    var name = ""
+
+    @IBOutlet var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        nameLabel.textColor = .white
+
+        
+        nameLabel.text = "You`re picked up \n\(name)"
         
     }
     
-    @IBAction func exitButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func sendButton(_ sender: UIButton) {
-        
-        
-        guard let name = nameTF.text else { return }
-        guard let surname = surnameTF.text else { return }
-        
-        if name == "" {
-            showAlert(with: "Empty field", message: "Please, enter your Name")
-            return
-        } else if surname == "" {
-            showAlert(with: "Empty field", message: "Please, enter your Surname")
-            return
-        }
-        
-        let person = Person(Name: name, Surname: surname)
-        
-        StorageManager.shared.saveContact(person: person)
-        
-        delegate.sendName(person: person)
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func showAlert(with title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ok", style: .default)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
     
 }
